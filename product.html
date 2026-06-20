@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details | Amazon</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body id="product-page">
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="navbar-top container">
+      <a href="index.html" class="logo" aria-label="Amazon Home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12z"/></svg>
+        Amazon
+      </a>
+      <form class="search-bar" id="search-form">
+        <input type="text" id="search-input" placeholder="Search products..." autocomplete="off">
+        <button type="submit" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </button>
+      </form>
+      <div class="nav-actions">
+        <a href="index.html">Home</a>
+        <a href="cart.html" class="cart-link" aria-label="Shopping Cart">
+          <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M6 6L5 3H2"/></svg>
+          <span>Cart</span>
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+    <nav class="navbar-bottom container">
+      <a href="index.html">All</a>
+      <a href="index.html?search=Electronics">Electronics</a>
+      <a href="index.html?search=Fashion">Fashion</a>
+      <a href="index.html?search=Home">Home</a>
+      <a href="index.html?search=Grocery">Grocery</a>
+      <a href="index.html?search=Sports">Sports</a>
+    </nav>
+  </header>
+
+  <!-- Product Details -->
+  <main>
+    <div class="container">
+      <div class="product-detail" id="product-detail">
+        <!-- Product details injected by script.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Get to Know Us</h4>
+          <a href="#">About Amazon</a>
+          <a href="#">Careers</a>
+          <a href="#">Press Releases</a>
+        </div>
+        <div>
+          <h4>Connect with Us</h4>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+        </div>
+        <div>
+          <h4>Make Money with Us</h4>
+          <a href="#">Sell on Amazon</a>
+          <a href="#">Become an Affiliate</a>
+          <a href="#">Advertise</a>
+        </div>
+        <div>
+          <h4>Let Us Help You</h4>
+          <a href="#">Help</a>
+          <a href="#">Returns</a>
+          <a href="#">Customer Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="year"></span> Amazon. All rights reserved. 
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

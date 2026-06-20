@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Amazon</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body id="checkout-page">
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="navbar-top container">
+      <a href="index.html" class="logo" aria-label="Amazon Home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12z"/></svg>
+        Amazon
+      </a>
+      <form class="search-bar" id="search-form">
+        <input type="text" id="search-input" placeholder="Search products..." autocomplete="off">
+        <button type="submit" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </button>
+      </form>
+      <div class="nav-actions">
+        <a href="index.html">Home</a>
+        <a href="cart.html" class="cart-link" aria-label="Shopping Cart">
+          <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M6 6L5 3H2"/></svg>
+          <span>Cart</span>
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+    <nav class="navbar-bottom container">
+      <a href="index.html">All</a>
+      <a href="index.html?search=Electronics">Electronics</a>
+      <a href="index.html?search=Fashion">Fashion</a>
+      <a href="index.html?search=Home">Home</a>
+      <a href="index.html?search=Grocery">Grocery</a>
+      <a href="index.html?search=Sports">Sports</a>
+    </nav>
+  </header>
+
+  <!-- Checkout Content -->
+  <main>
+    <div class="checkout-page container">
+      <div class="checkout-col">
+        <div class="checkout-card">
+          <h2>Select Delivery Address</h2>
+          <p id="no-address-msg" class="hidden">No saved addresses. Add one to continue.</p>
+          <div class="address-grid" id="address-list">
+            <!-- Saved addresses injected by script.js -->
+          </div>
+          <button id="add-address-btn" class="btn btn-light">+ Add New Address</button>
+
+          <!-- Address Form -->
+          <div id="address-form-container" class="hidden">
+            <h3 id="address-form-title" style="margin-top:1rem;">Add New Address</h3>
+            <form id="address-form" class="form-grid" style="margin-top:0.75rem;">
+              <div class="form-group full">
+                <label for="addr-name">Full Name</label>
+                <input type="text" id="addr-name" required>
+              </div>
+              <div class="form-group">
+                <label for="addr-mobile">Mobile Number</label>
+                <input type="tel" id="addr-mobile" required pattern="[0-9+\-\s]{7,15}" title="Enter a valid phone number">
+              </div>
+              <div class="form-group">
+                <label for="addr-pincode">Pincode</label>
+                <input type="text" id="addr-pincode" required>
+              </div>
+              <div class="form-group full">
+                <label for="addr-house">House / Flat / Building</label>
+                <input type="text" id="addr-house" required>
+              </div>
+              <div class="form-group full">
+                <label for="addr-street">Street / Area</label>
+                <input type="text" id="addr-street" required>
+              </div>
+              <div class="form-group">
+                <label for="addr-city">City</label>
+                <input type="text" id="addr-city" required>
+              </div>
+              <div class="form-group">
+                <label for="addr-state">State</label>
+                <input type="text" id="addr-state" required>
+              </div>
+              <div class="form-actions full">
+                <button type="submit" class="btn btn-primary">Save Address</button>
+                <button type="button" id="cancel-address-btn" class="btn btn-light">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="checkout-card order-summary" id="checkout-summary">
+        <!-- Order summary injected by script.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Get to Know Us</h4>
+          <a href="#">About Amazon</a>
+          <a href="#">Careers</a>
+          <a href="#">Press Releases</a>
+        </div>
+        <div>
+          <h4>Connect with Us</h4>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+        </div>
+        <div>
+          <h4>Make Money with Us</h4>
+          <a href="#">Sell on Amazon</a>
+          <a href="#">Become an Affiliate</a>
+          <a href="#">Advertise</a>
+        </div>
+        <div>
+          <h4>Let Us Help You</h4>
+          <a href="#">Help</a>
+          <a href="#">Returns</a>
+          <a href="#">Customer Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="year"></span> Amazon. All rights reserved. 
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
