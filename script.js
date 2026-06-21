@@ -1,10 +1,3 @@
-/**
- * Amazon - Amazon-inspired e-commerce frontend
- * Built with vanilla JavaScript. Uses LocalStorage to persist
- * cart contents, saved addresses, and order history.
- */
-
-// -------------------- Product Catalog --------------------
 const products = [
   {
     id: 1,
